@@ -1,0 +1,37 @@
+/* 全局默认样式 */
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0;}
+header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}
+table{border-collapse:collapse;border-spacing:0;}
+caption,th{text-align:left;font-weight:normal;}
+html,body,fieldset,img,iframe,abbr{border:0;}
+iframe{ border: 1px solid #FFF;}
+i,cite,em,var,address,dfn{font-style:normal;}
+[hidefocus],summary{outline:0;}
+li{list-style:none;}
+h1,h2,h3,h4,h5,h6,small{font-size:100%;}
+sup,sub{font-size:83%;}
+pre,code,kbd,samp{font-family:inherit;}
+q:before,q:after{content:none;}
+textarea{overflow:auto;resize:none;}/*去除输入域可拖动*/
+label,summary{cursor:default;}
+a,button{cursor:pointer;}/*链接按钮强制手型*/
+h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;}/*标题粗体*/
+del,ins,u,s,a,a:hover{text-decoration:none;}/*全局去除下划线*/
+body,textarea,input,button,select,keygen,legend{font:14px/1.14 "Microsoft YaHei","Lucida Sans Unicode","Myriad Pro","Hiragino Sans GB","Heiti SC",Verdana,simsun,\5b8b\4f53;color:#444;outline:0;}/*全局字体样式*/
+body{background:none;border: none;}/*全局页面背景色 min-width: 980px; */
+.min-wa{ min-width: 100px !important;}
+a{color:#96c32a;outline:none;blr:expression(this.onFocus=this.blur());}
+a:hover {
+    color: #7ba80e;
+    text-decoration: none; 
+}
+
+/*居中*/
+.f-pwc{ width: 980px;margin: 0 auto;}
+.f-mpwc{min-width: 980px}
+.f-w150{ width: 150px !important;}
+/*相对定位*/
+.f-oh{overflow:hidden;}
+/*左右浮动*/
+.f-fl{float:left;}
+.f-fr{float:right;}
