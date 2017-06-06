@@ -31,3 +31,19 @@
     font-weight: bold;
     border-bottom: 2px solid transparent;
 }
+
+.tab-bar .active a,
+.tab-bar .active a:hover,
+.tab-bar .active a:focus {
+  border-bottom-color: #fff;
+  padding-bottom: 10px;
+}
+
+.tab-bar li a:hover,
+.tab-bar li a:hover,
+.tab-bar li a:focus {
+  background-color: transparent;
+  border-bottom-color: #a9a9a9;
+  border-bottom-color: rgba(255,255,255,.25);
+  padding-bottom: 10px;
+}
