@@ -1,22 +1,15 @@
-.site-wrapper{
-    display: table;
-    width: 100%;
-    height: 100%;
-    min-height: 100%;
-}
-.cover-container {
-  margin-right: auto;
-  margin-left: auto;
-}
+/*导航栏*/
 .tab-bar {
     color: #fff;
     text-shadow: 0 1px 3px rgba(0,0,0,.5);
     height: 100px;
     width: 100%;
     background-color:#333;
-    position: relative;
+    position: absolute;
     font-size: 24px;
     line-height: 100px;
+    z-index:5;
+    top:0;
 }
 .tab-bar a{
     outline:none;
@@ -46,4 +39,103 @@
   border-bottom-color: #a9a9a9;
   border-bottom-color: rgba(255,255,255,.25);
   padding-bottom: 10px;
+}
+
+/*底部*/
+.footer {
+    height: 100px;
+    width: 100%;
+    background: #333;
+    line-height: 100px;
+    color: #FFF;
+    overflow: hidden;
+    position:absolute;
+    bottom:0px;
+    z-index:200;
+}
+
+/*index*/
+.content{
+    background: #333;
+    color: #fff;
+    width: 100%;
+    position:absolute;
+    z-index:100;
+    top:100px;
+    bottom:100px;
+    overflow:hidden;
+}
+
+.slogan{
+    width: 50%; 
+    height:50%; 
+    overflow: hidden; 
+    margin: auto; 
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    bottom: 0; 
+    right: 0; 
+    color: #fff;
+    text-align: center;
+}
+
+.slogan p{
+    padding-top: 50px;
+}
+
+/*登录*/
+.content-ot{
+    width: 100%;
+    position:absolute;
+    z-index:100;
+    top:100px;
+    bottom:100px;
+    overflow:hidden;
+}
+.login{
+    background: #fff;
+    width: 470px; 
+    height:400px; 
+    overflow: hidden; 
+    margin: auto; 
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    bottom: 0; 
+    right: 0; 
+}
+
+.l-txt{
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    color: #263239;
+    padding: 6px 12px;
+}
+.l-txtwh{
+    height: 42px;
+    width: 94%;
+}
+.l-txt:hover{
+    border: 1px solid #bac6cd;
+}
+.l-txt:focus{
+    border: 1px solid #00a7f7;
+}
+.login .f-pd30 div{
+    margin-top: 10px;
+}
+
+/*修改资料*/
+.card div{
+    margin: 0 30px;
+}
+#edit label{
+    width: 160px;
+    text-align: right;
+    display:inline-block;
+}
+.txtnn{
+    width: 200px;
+    height: 25px;
 }

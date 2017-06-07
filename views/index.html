@@ -1,28 +1,15 @@
 {% extends "base.html" %} {% block main %}
 
-<input type="button" id="btn-list" value="获取数据" />
-
-<table id="list">
-    <tr>
-        <td>Product</td>
-        <td>Price</td>
-    </tr>
-</table>
-
-<script>
-    $(function () {
-        var tbody = "";
-        $("#btn-list").click(function () {
-            $.get('/api/products', function (data) {
-                if (data) {
-                    for (var i = 0; i < data.products.length; i++) {
-                        var tr = "<tr><td>" + data.products[i].name + "</td><td>" + data.products[i].manufacturer + "</td></tr>";
-                        $("#list").append(tr);
-                    }
-                }
-            })
-        });
-    })
-</script>
+<div class="content">
+    <div class="f-pwc">
+        <div class="slogan">
+            <p class="f-fs36">Hello World!</p>
+            <p class="f-fs24">good good study, day day up!</p>
+            <p>
+                <a href="#" class="btn btnv3 f-wm f-fs16">Learn more</a>
+            </p>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
