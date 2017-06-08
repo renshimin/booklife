@@ -17,8 +17,8 @@ label,summary{cursor:default;}
 a,button{cursor:pointer;}/*链接按钮强制手型*/
 h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;}/*标题粗体*/
 del,ins,u,s,a,a:hover{text-decoration:none;}/*全局去除下划线*/
-body,textarea,input,button,select,keygen,legend{font:14px/1.14 "Microsoft YaHei","Lucida Sans Unicode","Myriad Pro","Hiragino Sans GB","Heiti SC",Verdana,simsun,\5b8b\4f53;color:#444;outline:0;}/*全局字体样式*/
-body{background:#f3f4f8;border: none;color: #8fa4af;}/*全局页面背景色 min-width: 980px; */
+body,textarea,input,button,select,keygen,legend{font:14px/1.14 "Microsoft YaHei","Lucida Sans Unicode","Myriad Pro","Hiragino Sans GB","Heiti SC",Verdana,simsun,\5b8b\4f53;color:#333;outline:0;}/*全局字体样式*/
+body{background:#f3f4f8;border: none;}/*全局页面背景色 min-width: 980px;备用颜色color: #8fa4af; */
 img{border-radius: 4px;}
 .min-wa{ min-width: 100px !important;}
 a{color:#96c32a;outline:none;blr:expression(this.onFocus=this.blur());}
@@ -32,6 +32,7 @@ a:hover {
 .f-cr1{ background: #efcee8 !important;}
 .f-cr2{color:#8fa4af !important;}
 .f-cr3{background: #fff !important;}
+.f-cr4{color:#999 !important;}
 /*居中*/
 .f-pwc{ width: 980px;margin: 0 auto;}
 .f-mpwc{min-width: 980px}
@@ -68,14 +69,40 @@ a:hover {
     box-shadow: 0 1px 3px rgba(0,37,55,.05);
     box-sizing: border-box;
 }
+.cardshow{
+    background: #fff;
+    border: 1px solid #e7eaf1;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,37,55,.05);
+    box-sizing: border-box;
+    color: #333;
+}
+.tcard{
+    border: 1px solid #78bc85;
+    padding: 2px 4px;
+}
+/*输入框边框*/
+.l-txt{
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    color: #263239;
+    padding: 5px 12px;
+}
+.l-txt:hover{
+    border: 1px solid #bac6cd;
+}
+.l-txt:focus{
+    border: 1px solid #00a7f7;
+}
 /*是否有下边线*/
 .f-bb{ border-bottom:1px solid #cfd0d0; margin-top: 10px;}
 .f-bt{ border-top:1px solid #cfd0d0}
 /*行高*/
 .f-lhn{line-height:normal;}
 .f-lh20{line-height:20px;}
-.f-lh23{line-height:23px;}
+.f-lh18{line-height:18px;}
 .f-lh25{line-height:25px !important;}
+.f-lh35{line-height:35px !important;}
 .f-lh45{line-height:45px !important;}
 /*边距*/
 .f-fmb{ margin-bottom: 130px;}.f-fmb-lg{ margin-bottom: 260px;}/*增加页面底部边距*/
@@ -119,7 +146,13 @@ a:hover {
 .f-mr30{ margin-right: 30px !important;}
 .f-mr50{ margin-right: 50px !important;}
 .f-pd30{padding: 30px !important;}
+.f-pt10{padding-top: 10px !important;}
 .f-m30{margin: 30px;}
+label{
+    width: 160px;
+    text-align: right;
+    display:inline-block;
+}
 /*按钮*/
 .btn {
     font-size: 13px;
@@ -135,9 +168,9 @@ a:hover {
     text-decoration: none !important;
 }
 .btn.btnv1 {
-    height: 26px;
-    line-height: 26px;
-    width: 77px;
+    height: 34px;
+    line-height: 34px;
+    width: 62px;
 }
 .btn.btnv1.h {
     height: 38px;

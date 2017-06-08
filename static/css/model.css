@@ -11,6 +11,14 @@
     z-index:5;
     top:0;
 }
+.tab-bar2{
+    height: 100px;
+    width: 100%;
+    background: #333;
+    font-size: 24px;
+    line-height: 100px;
+    overflow: hidden;
+}
 .tab-bar a{
     outline:none;
     color: #fff;
@@ -88,7 +96,7 @@
 .content-ot{
     width: 100%;
     position:absolute;
-    z-index:100;
+    z-index:300;
     top:100px;
     bottom:100px;
     overflow:hidden;
@@ -106,21 +114,10 @@
     right: 0; 
 }
 
-.l-txt{
-    border: 1px solid #e5e5e5;
-    border-radius: 4px;
-    color: #263239;
-    padding: 6px 12px;
-}
+
 .l-txtwh{
     height: 42px;
     width: 94%;
-}
-.l-txt:hover{
-    border: 1px solid #bac6cd;
-}
-.l-txt:focus{
-    border: 1px solid #00a7f7;
 }
 .login .f-pd30 div{
     margin-top: 10px;
@@ -130,12 +127,51 @@
 .card div{
     margin: 0 30px;
 }
-#edit label{
-    width: 160px;
-    text-align: right;
-    display:inline-block;
-}
+
 .txtnn{
     width: 200px;
     height: 25px;
+}
+.ta-wh{
+    width: 540px;
+    height: 75px;
+    line-height: 25px;
+}
+
+/*发布*/
+#editor{
+    margin: 0px;
+}
+#editor div{
+    margin: 0px;
+}
+#editor .w-e-toolbar div{
+    margin-left: 8px;
+}
+.w-e-text-r{
+    padding: 0 10px;
+    overflow-y:hidden !important;
+}
+.txt-write{
+    width: 600px;
+    height: 25px;
+}
+#tagspan>span:not(:first-child){
+    margin-left: 10px;
+}
+
+/*列表*/
+.contentlist{
+    width: 100%;
+    position:relative;
+    top:100px;
+}
+.footer2 {
+    height: 100px;
+    width: 100%;
+    background: #333;
+    line-height: 100px;
+    color: #FFF;
+    position: relative;
+    top: 115px;
 }
