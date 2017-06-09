@@ -21,9 +21,8 @@ body,textarea,input,button,select,keygen,legend{font:14px/1.14 "Microsoft YaHei"
 body{background:#f3f4f8;border: none;}/*全局页面背景色 min-width: 980px;备用颜色color: #8fa4af; */
 img{border-radius: 4px;}
 .min-wa{ min-width: 100px !important;}
-a{color:#96c32a;outline:none;blr:expression(this.onFocus=this.blur());}
+a{color:#333;outline:none;blr:expression(this.onFocus=this.blur());}
 a:hover {
-    color: #7ba80e;
     text-decoration: none; 
 }
 /* 功能性样式 */
@@ -33,6 +32,7 @@ a:hover {
 .f-cr2{color:#8fa4af !important;}
 .f-cr3{background: #fff !important;}
 .f-cr4{color:#999 !important;}
+.f-cr5{color: #78bc85 !important;}
 /*居中*/
 .f-pwc{ width: 980px;margin: 0 auto;}
 .f-mpwc{min-width: 980px}
@@ -61,6 +61,8 @@ a:hover {
 .f-fs25{font-size:25px !important;}
 .f-fs28{font-size:28px !important;}
 .f-fs36{font-size:36px !important;}
+/*字间隔*/
+.f-ls1{letter-spacing:1px}
 /*边框*/
 .card{
     background: #fff;
@@ -81,9 +83,14 @@ a:hover {
     border: 1px solid #78bc85;
     padding: 2px 4px;
 }
+.author-card{
+    border: 1px solid #78bc85;
+    padding: 1px 2px;
+    font-size: 12px
+}
 /*输入框边框*/
 .l-txt{
-    border: 1px solid #e5e5e5;
+    border: 1px solid #e5e5e5; /*备用#dcdcdc*/
     border-radius: 4px;
     color: #263239;
     padding: 5px 12px;
@@ -157,7 +164,7 @@ label{
 .btn {
     font-size: 13px;
     display: block;
-    border: 1px solid #d1d2d2;
+    border: 1px solid #78bc85;
     border-radius: 3px;
     -webkit-border-radius:3px;
     -moz-border-radius:3px;

@@ -6,19 +6,23 @@
                 有你更精彩！
             </div>
             <div class="f-pd30">
-                <div>邮箱</div>
-                <div>
-                    <input type="text" id="email" name="email" placeholder="请输入邮箱" class="l-txt l-txtwh" />
-                </div>
-                <div class="f-pt10">密码</div>
-                <div>
-                    <input type="password" id="password" name="password" placeholder="请输入密码" class="l-txt l-txtwh" />
-                </div>
+                <form id="registerform" method="POST">
+                    <div>邮箱</div>
+                    <div>
+                        <input type="text" id="email" name="email" placeholder="请输入邮箱" class="l-txt l-txtwh" />
+                    </div>
+                    <div class="f-pt10">密码</div>
+                    <div>
+                        <input type="password" id="password" name="password" placeholder="请输入密码" class="l-txt l-txtwh" />
+                    </div>
+                </form>
             </div>
             <div class="f-m30 f-fr">
-                <a href="#" class="btn btnv5 f-wm f-fs16 f-cr1">注 册</a>
+                <a href="#" id="register" class="btn btnv5 f-wm f-fs16">注 册</a>
             </div>
         </div>
     </div>
 </div>
+<script src="/static/js/jquery.validate.min.js"></script>
+<script src="/static/js/validform.js"></script>
 {% endblock %}

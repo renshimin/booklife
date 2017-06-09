@@ -29,9 +29,10 @@ module.exports = {
             title: '书戈'
         });
     },
-    'GET /test': async (ctx, next) => {
-        ctx.render('test.html', {
+    'GET /read': async (ctx, next) => {
+        ctx.render('read.html', {
             title: '书戈' 
         });
     }
+    
 };
