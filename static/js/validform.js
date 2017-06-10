@@ -38,23 +38,28 @@ $(function ($) {
                 for (var obj in errorMap) {
                     // 自定义错误提示效果
                     $('#' + obj).addClass('errorinfo');
+                    return;
                 }
                 // 此处注意，一定要调用默认方法，这样保证提示消息的默认效果
                 // this.defaultShowErrors();
             }, submitHandler: function () {
-                var data = {
+                var params = {
                     email: $("#email").val(),
                     password: $("#password").val(),
                 };
-                $.post(geteway + "/user/reset/pwd", data, function (successData) {
-                    if (successData.code == "1") {
-                        alert("修改成功");
-                        window.location.href = "/login";
+                $.post(geteway + "/api/sendemail", params, function (data) {
+                    if (data.code == "1") {
+                        $(".okinfo").html(data.msg);
+                        $(".okinfo").css('display','inline-block');
                     } else {
-                        alert(successData.errorMessage);
+                        $(".errinfo").html(data.msg);
+                        $(".errinfo").css('display','inline-block');
+                        // alert(data.msg);
                     }
                 });
             }
         });
     }
+
+    
 });

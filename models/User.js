@@ -1,16 +1,51 @@
-const db = require('../db');
+module.exports = function(sequelize,DataTypes){
+    var User = sequelize.define('users',{
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+        },
+        nickname: {
+            type: DataTypes.STRING
+        },
+        email: {
+            type: DataTypes.STRING
+        },
+        password: {
+            type: DataTypes.STRING
+        },
+        mobile: {
+            type: DataTypes.STRING
+        },
+        status: {
+            type: DataTypes.INTEGER
+        },
+        last_time: {
+            type: DataTypes.BIGINT
+        },
+        add_time: {
+            type: DataTypes.BIGINT
+        },
+        update_time: {
+            type: DataTypes.BIGINT
+        }
+    },{
+        timestamps: false,
+        freezeTableName: true
+    });
 
-var User = db.defineModel('users', {
-    nickname: db.STRING(50),
-    email: db.STRING(50),
-    password: db.STRING(50),
-    mobile: db.STRING(20),
-});
-
-
-module.exports = {
-    getUser: () => {
-        var users = User.findAll();
-        return users;
-    }
+    return User;
 }
+
+// module.exports = {
+//     getUser: (id) => {
+//         var users = User.findAll({
+//             where: {
+//                 id: id
+//             } 
+//         });
+//         return users;
+//     },
+//     add: (model) => {
+//         return User.create(model);
+//     }
+// }

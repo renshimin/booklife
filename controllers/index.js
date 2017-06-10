@@ -33,6 +33,16 @@ module.exports = {
         ctx.render('read.html', {
             title: '书戈' 
         });
+    },
+    'GET /register/validate/:str': async (ctx, next) => {
+        ctx.render('validate.html', {
+            title: '激活账号' 
+        });
+    },
+    'GET /test': async (ctx, next) => {
+        ctx.render('test.html', {
+            title: '书戈' 
+        });
     }
     
 };

@@ -114,6 +114,28 @@
     bottom: 0; 
     right: 0; 
 }
+.msg{
+    text-align:center;
+    margin-top:60px;
+}
+.errinfo{
+    display:inline-block;
+    background:#fff; 
+    border:1px solid #ea6f5a; 
+    padding:10px 40px;
+    border-radius:4px;
+    display: none;
+    width: 250px;
+}
+.okinfo{
+    display:inline-block;
+    background:#fff; 
+    border:1px solid #78bc85; 
+    padding:10px 40px;
+    border-radius:4px;
+    display: none;
+    width: 550px;
+}
 
 .l-txtwh{
     height: 42px;
@@ -286,11 +308,11 @@
 }
 
 .errorinfo{
-    border: 1px solid #00a7f7;
+    border: 1px solid #78bc85;
     border-radius: 4px;
     color: #263239;
 }
 
 .errorinfo:focus{
-    border: 1px solid red;
-}
+    border: 1px solid #ea6f5a;
+}   
