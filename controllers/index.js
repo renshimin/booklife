@@ -1,3 +1,5 @@
+const cache = require('../redis');
+
 module.exports = {
     'GET /': async (ctx, next) => {
         ctx.render('index.html', {
@@ -15,9 +17,23 @@ module.exports = {
         });
     },
     'GET /edit': async (ctx, next) => {
-        ctx.render('edit.html', {
-            title: '编辑个人资料'
-        });
+        return cache.get('user')
+            .then(function (result) {
+                var user = JSON.parse(result);
+                if (user == null) {
+                    ctx.render('login.html', {
+                        title: '登录',
+                        islogin: false
+                    });
+                } else {
+                    ctx.render('edit.html', {
+                        title: '编辑个人资料',
+                        islogin: true
+                    });
+                }
+            }).catch(function (err) {
+                console.log(err);
+            })
     },
     'GET /write': async (ctx, next) => {
         ctx.render('write.html', {
@@ -31,18 +47,18 @@ module.exports = {
     },
     'GET /read': async (ctx, next) => {
         ctx.render('read.html', {
-            title: '书戈' 
+            title: '书戈'
         });
     },
     'GET /register/validate/:str': async (ctx, next) => {
         ctx.render('validate.html', {
-            title: '激活账号' 
+            title: '激活账号'
         });
     },
     'GET /test': async (ctx, next) => {
         ctx.render('test.html', {
-            title: '书戈' 
+            title: '书戈'
         });
     }
-    
+
 };

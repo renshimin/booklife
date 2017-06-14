@@ -4,7 +4,8 @@ function base64(val) {
 }
 function base64Decode(val) {
     var btxt = new Buffer(val, 'base64')
-    return btxt.toString();
+    var a=  btxt.toString();
+    return a;
 }
 function randomString() {
     var str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -18,5 +19,6 @@ function randomString() {
 
 module.exports = {
     base64,
-    randomString
+    randomString,
+    base64Decode
 };
