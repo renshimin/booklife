@@ -4,34 +4,35 @@
         <div class="card f-mt15">
             <div class="f-fs20 f-mt20 f-bb f-lh45">发布</div>
             <div id="write">
-                <div class="f-mt30 f-lh35">
-                    <label class="f-fl">标题</label>
-                    <div class="f-cb" style="margin-left:200px;">
-                        <input type="text" id="title" name="title" class="l-txt txt-write">
-                    </div>
-                </div>
-                <div class="f-mt30">
-                    <label class="f-fl">内容</label>
-                    <div class="f-cb" style="margin-left:200px;">
-                        <div id="editor">
-
+                <form id="writeform">
+                    <div class="f-mt30 f-lh35">
+                        <label class="f-fl">标题</label>
+                        <div class="f-cb" style="margin-left:200px;">
+                            <input type="text" id="title" name="title" class="l-txt txt-write" placeholder="请输入标题，最长40个字符">
                         </div>
                     </div>
-                </div>
-                <div class="f-mt30 f-lh35">
-                    <label class="f-fl">标签</label>
-                    <div class="f-cb" style="margin-left:200px;">
-                        <input type="text" id="tag" name="tag" class="l-txt txt-write" placeholder="添加相关标签，用回车分割">
+                    <div class="f-mt30">
+                        <label class="f-fl">内容</label>
+                        <div class="f-cb" style="margin-left:200px;">
+                            <div id="editor">
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="f-mt10 f-lh35">
-                    <div id="tagspan" class="f-cb" style="margin-left:200px;"></div>
-                </div>
-                <div class="f-mt30 f-mb30">
-                    <div class="f-cb" style="margin-left:200px;">
-                        <a href="#" class="btn btnv1 f-fs16">保 存</a>
+                    <div class="f-mt30 f-lh35">
+                        <label class="f-fl">标签</label>
+                        <div class="f-cb" style="margin-left:200px;">
+                            <input type="text" id="tag" name="tag" class="l-txt txt-write" placeholder="添加相关标签，用回车分割">
+                        </div>
                     </div>
-                </div>
+                    <div class="f-mt10 f-lh35">
+                        <div id="tagspan" class="f-cb" style="margin-left:200px;"></div>
+                    </div>
+                    <div class="f-mt30 f-mb30">
+                        <div class="f-cb" style="margin-left:200px;">
+                            <a class="btn btnv1 f-fs16" id="savewrite">保 存</a>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -60,19 +61,8 @@
 </script>
 <script>
     $(function () {
+        $("ul li").eq(1).addClass("active");
         $(".w-e-text").css("overflow-y", "hidden");
-        $(document).keydown(function (e) {
-            if (!e) var e = window.event;
-            if (e.keyCode == 13) {
-                var tag = $("#tag").val();
-                var txt = "<span>#"+ tag +"</span>";
-                $("#tagspan").append(txt);
-                $("#tag").val("");
-            }
-        });
-        $("#tagspan span").live('click',function(){
-            $(this).remove();
-        })
     })
 
 </script>

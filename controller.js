@@ -1,4 +1,5 @@
 const fs = require('fs');	//文件处理
+// const upload = require('./upload');
 
 function addControllers(router){
     //获取controllers下所有文件
@@ -24,7 +25,12 @@ function addControllers(router){
                 var path = url.substring(5);
                 router.post(path,mapping[url]);
                 console.log(`register URL mapping: POST ${path}`);
-            }else{
+            }
+            // else if (url.startsWith('UPLOAD ')){
+            //     var path = url.substring(7);
+            //     router.post(path,upload.single('file'),mapping[url]);
+            // }
+            else{
                 console.log(`invalid URL: ${url}`);
             }
         }

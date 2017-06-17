@@ -1,3 +1,5 @@
+const crypto = require('crypto');
+
 function base64(val) {
     var btxt = new Buffer(val);
     return btxt.toString('base64');
@@ -16,9 +18,25 @@ function randomString() {
     }
     return s;
 }
+function MD5(val){
+    return crypto.createHash('md5').update(val).digest('hex');
+}
+function ip(req) {
+    var ip = req.headers['x-forwarded-for'] ||
+        req.ip ||
+        req.connection.remoteAddress ||
+        req.socket.remoteAddress ||
+        req.connection.socket.remoteAddress || '';
+    if(ip.split(',').length>0){
+        ip = ip.split(',')[0]
+    }
+    return ip;
+};
 
 module.exports = {
     base64,
     randomString,
-    base64Decode
+    base64Decode,
+    MD5,
+    ip
 };

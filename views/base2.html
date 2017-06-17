@@ -19,17 +19,20 @@
             <a href="/">书戈</a>
             <ul class="f-fr">
                 {% if islogin %}
-                <li class="active">
+                <li>
                     <a href="/home">首页</a>
                 </li>
                 <li>
-                    <a href="/login">账户设置</a>
+                    <a href="/write">写作</a>
+                </li>
+                <li>
+                    <a href="/edit">账户设置</a>
                 </li>
                 <li>
                     <a id="logout">退出</a>
                 </li>
                 {% else %}
-                <li class="active">
+                <li>
                     <a href="/home">首页</a>
                 </li>
                 <li>

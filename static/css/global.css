@@ -20,6 +20,10 @@ del,ins,u,s,a,a:hover{text-decoration:none;}/*全局去除下划线*/
 body,textarea,input,button,select,keygen,legend{font:14px/1.14 "Microsoft YaHei","Lucida Sans Unicode","Myriad Pro","Hiragino Sans GB","Heiti SC",Verdana,simsun,\5b8b\4f53;color:#333;outline:0;}/*全局字体样式*/
 body{background:#f3f4f8;border: none;}/*全局页面背景色 min-width: 980px;备用颜色color: #8fa4af; */
 img{border-radius: 4px;}
+/*input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #999;}
+input:-moz-placeholder, textarea:-moz-placeholder {color:#999;}
+input::-moz-placeholder, textarea::-moz-placeholder {color:#999;}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {color:#999;}*/
 .min-wa{ min-width: 100px !important;}
 a{color:#333;outline:none;blr:expression(this.onFocus=this.blur());}
 a:hover {
@@ -33,6 +37,7 @@ a:hover {
 .f-cr3{background: #fff !important;}
 .f-cr4{color:#999 !important;}
 .f-cr5{color: #78bc85 !important;}
+.f-cr6{color: #ea6f5a !important;}
 /*居中*/
 .f-pwc{ width: 980px;margin: 0 auto;}
 .f-mpwc{min-width: 980px}

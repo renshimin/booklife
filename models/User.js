@@ -4,30 +4,17 @@ module.exports = function(sequelize,DataTypes){
             type: DataTypes.INTEGER,
             primaryKey: true,
         },
-        nickname: {
-            type: DataTypes.STRING
-        },
-        email: {
-            type: DataTypes.STRING
-        },
-        password: {
-            type: DataTypes.STRING
-        },
-        mobile: {
-            type: DataTypes.STRING
-        },
-        status: {
-            type: DataTypes.INTEGER
-        },
-        last_time: {
-            type: DataTypes.BIGINT
-        },
-        add_time: {
-            type: DataTypes.BIGINT
-        },
-        update_time: {
-            type: DataTypes.BIGINT
-        }
+        nickname: DataTypes.STRING,
+        email: DataTypes.STRING,
+        password: DataTypes.STRING,
+        mobile: DataTypes.STRING,
+        avatar: DataTypes.STRING,
+        profile: DataTypes.STRING,
+        sex: DataTypes.INTEGER,
+        status: DataTypes.INTEGER,
+        last_time: DataTypes.BIGINT,
+        add_time: DataTypes.BIGINT,
+        update_time: DataTypes.BIGINT
     },{
         timestamps: false,
         freezeTableName: true

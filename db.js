@@ -99,6 +99,8 @@ var db = {
     })
 };
 db.User = db.sequelize.import('./models/User.js');
+db.User_Log = db.sequelize.import('./models/User_Log.js');
+db.Article = db.sequelize.import('./models/Article.js');
 module.exports = db;
 
 

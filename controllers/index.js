@@ -2,19 +2,61 @@ const cache = require('../redis');
 
 module.exports = {
     'GET /': async (ctx, next) => {
-        ctx.render('index.html', {
-            title: '首页'
-        });
+        return cache.get('user')
+            .then(function (result) {
+                var user = JSON.parse(result);
+                if (user == null) {
+                    ctx.render('index.html', {
+                        title: '首页',
+                        islogin: false
+                    });
+                } else {
+                    ctx.render('index.html', {
+                        title: '首页',
+                        islogin: true
+                    });
+                }
+            }).catch(function (err) {
+                console.log(err);
+            })
     },
     'GET /login': async (ctx, next) => {
-        ctx.render('login.html', {
-            title: '登录'
-        });
+        return cache.get('user')
+            .then(function (result) {
+                var user = JSON.parse(result);
+                if (user == null) {
+                    ctx.render('login.html', {
+                        title: '登录',
+                        islogin: false
+                    });
+                } else {
+                    ctx.render('index.html', {
+                        title: '书戈',
+                        islogin: true
+                    });
+                }
+            }).catch(function (err) {
+                console.log(err);
+            })
     },
     'GET /register': async (ctx, next) => {
-        ctx.render('register.html', {
-            title: '注册'
-        });
+        return cache.get('user')
+            .then(function (result) {
+                var user = JSON.parse(result);
+                if (user == null) {
+                    ctx.render('register.html', {
+                        title: '注册',
+                        islogin: false
+                    });
+                } else {
+                    ctx.render('index.html', {
+                        title: '书戈',
+                        islogin: true
+                    });
+                }
+            }).catch(function (err) {
+                console.log(err);
+            })
     },
     'GET /edit': async (ctx, next) => {
         return cache.get('user')
@@ -36,14 +78,43 @@ module.exports = {
             })
     },
     'GET /write': async (ctx, next) => {
-        ctx.render('write.html', {
-            title: '写作'
-        });
+        return cache.get('user')
+            .then(function (result) {
+                var user = JSON.parse(result);
+                if (user == null) {
+                    ctx.render('home.html', {
+                        title: '首页',
+                        islogin: false
+                    });
+                } else {
+                    ctx.render('write.html', {
+                        title: '写作',
+                        islogin: true
+                    });
+                }
+            }).catch(function (err) {
+                console.log(err);
+            })
+
     },
     'GET /home': async (ctx, next) => {
-        ctx.render('home.html', {
-            title: '书戈'
-        });
+        return cache.get('user')
+            .then(function (result) {
+                var user = JSON.parse(result);
+                if (user == null) {
+                    ctx.render('home.html', {
+                        title: '首页',
+                        islogin: false
+                    });
+                } else {
+                    ctx.render('home.html', {
+                        title: '首页',
+                        islogin: true
+                    });
+                }
+            }).catch(function (err) {
+                console.log(err);
+            })
     },
     'GET /read': async (ctx, next) => {
         ctx.render('read.html', {
@@ -59,6 +130,8 @@ module.exports = {
         ctx.render('test.html', {
             title: '书戈'
         });
+    },
+    'GET /up': async (ctx, next) => {
+        ctx.render('up.html');
     }
-
 };
