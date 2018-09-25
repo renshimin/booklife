@@ -77,7 +77,8 @@ $(function ($) {
                 },
                 password: {
                     required: true,
-                    minlength: 6
+                    minlength: 6,
+                    maxlength: 16
                 }
             },
             messages: {
@@ -87,7 +88,8 @@ $(function ($) {
                 },
                 password: {
                     required: "请输入密码",
-                    minlength: "密码最少6个字符"
+                    minlength: "密码最少6个字符",
+                    maxlength: "密码最多16个字符"
                 }
             }, showErrors: function (errorMap, errorList) {
                 for (var obj in errorMap) {
@@ -125,8 +127,8 @@ $(function ($) {
     // 昵称验证
     $("#nickname").keyup(function () {
         var pfLength = $("#nickname").val().length;
-        var num = parseInt(pfLength) - 10;
-        if (pfLength > 10) {
+        var num = parseInt(pfLength) - 12;
+        if (pfLength > 12) {
             $("#nnerr").html("字数已超过" + num + "个字");
             $("#nickname").addClass('errorinfo');
         } else {
@@ -156,7 +158,7 @@ $(function ($) {
         $("#editform").validate({
             rules: {
                 nickname: {
-                    maxlength: 10
+                    maxlength: 12
                 },
                 profile: {
                     maxlength: 30
@@ -164,7 +166,7 @@ $(function ($) {
             },
             messages: {
                 nickname: {
-                    maxlength: "昵称最多10个字符"
+                    maxlength: "昵称最多12个字符"
                 },
                 profile: {
                     maxlength: "介绍最多30个字符"
@@ -180,6 +182,8 @@ $(function ($) {
                 $.post(geteway + "/api/updateuser", params, function (data) {
                     if (data.code == "0") {
                         alert(data.msg);
+                    }else{
+                        layer.msg("更新成功！");
                     }
                 });
             }

@@ -12,9 +12,8 @@ module.exports = function(sequelize,DataTypes){
         profile: DataTypes.STRING,
         sex: DataTypes.INTEGER,
         status: DataTypes.INTEGER,
-        last_time: DataTypes.BIGINT,
-        add_time: DataTypes.BIGINT,
-        update_time: DataTypes.BIGINT
+        add_time: DataTypes.DATE,
+        update_time: DataTypes.DATE
     },{
         timestamps: false,
         freezeTableName: true

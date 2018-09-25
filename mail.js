@@ -6,14 +6,14 @@ var transporter = nodemailer.createTransport(smtpTransport({
     secureConnection: true,
     port: 465,
     auth: {
-        user: 'struggle_yo@163.com',
+        user: 'struggle_zw@163.com',
         pass: 'a147852369',
     }
 }));
 //发送邮件
 function sendmail(html, email) {
     var option = {
-        from: "struggle_yo@163.com",
+        from: "struggle_zw@163.com",
         to: email
     }
     option.subject = '欢迎您注册书戈！'

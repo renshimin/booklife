@@ -94,7 +94,8 @@ module.exports = {
             //未激活状态，去激活
             if (user.length > 0 && user[0].status == 0) {
                 return User.update({
-                    status: 1
+                    status: 1,
+                    add_time: Date.now()
                 }, {
                         where: {
                             id: user[0].id
