@@ -34,15 +34,12 @@ $(function ($) {
                     required: "请输入密码",
                     minlength: "密码最少6个字符"
                 }
-            }, showErrors: function (errorMap, errorList) {
-                // 遍历错误列表
-                for (var obj in errorMap) {
-                    // 自定义错误提示效果
-                    $('#' + obj).addClass('errorinfo');
-                    return;
-                }
-                // 此处注意，一定要调用默认方法，这样保证提示消息的默认效果
-                // this.defaultShowErrors();
+            },errorPlacement:function(error,element){
+                $('#' + element.context.id).addClass('errorinfo');
+                return;
+            },success: function (label){
+                var id=label[0].htmlFor
+                $('#' + id).removeClass('errorinfo');
             }, submitHandler: function () {
                 var params = {
                     email: $("#email").val(),
@@ -91,11 +88,12 @@ $(function ($) {
                     minlength: "密码最少6个字符",
                     maxlength: "密码最多16个字符"
                 }
-            }, showErrors: function (errorMap, errorList) {
-                for (var obj in errorMap) {
-                    $('#' + obj).addClass('errorinfo');
-                    return;
-                }
+            }, errorPlacement: function (error, element) {
+                $('#' + element.context.id).addClass('errorinfo');
+                return;
+            },success: function(label,b){
+                var id=label[0].htmlFor
+                $('#' + id).removeClass('errorinfo');
             }, submitHandler: function () {
                 var params = {
                     email: $("#email").val(),
@@ -196,8 +194,14 @@ $(function ($) {
         if (e.keyCode == 13) {
             var tag = $("#tag").val();
             if (tag.length > 0) {
-                var txt = "<span>#" + tag + "</span>";
-                $("#tagspan").append(txt);
+                var tagsVal = $("#tagspan").text();
+                var tv = tagsVal.split("#");
+                if ($.inArray(tag,tv) == -1){
+                    var txt = "<span>#" + tag + "</span>";
+                    $("#tagspan").append(txt);
+                }else{
+                    layer.msg("标签已存在！");
+                }
                 $("#tag").val("");
             }
         }
@@ -223,29 +227,34 @@ $(function ($) {
                     required: '请输入标题',
                     maxlength: '标题最多输入40个字符'
                 }
-            }, showErrors: function (errorMap, errorList) {
-                for (var obj in errorMap) {
-                    $('#' + obj).addClass('errorinfo');
+            }, errorPlacement: function (error, element) {
+                $("#"+ element.context.id).addClass('errorinfo');
+            }, success: function (label) {
+                var id = label[0].htmlFor;
+                $("#" + id).removeClass('errorinfo');
+            }, submitHandler: function () {
+                // 文章标签注释
+                // var span_txt="";
+                // $("#tagspan span").each(function(){
+                //     span_txt += $(this).text();
+                // })
+                var contentVal = editor.txt.html();
+                if (contentVal.length < 12){
+                    layer.msg("请输入内容");
                     return;
                 }
-            }, submitHandler: function () {
-                var span_txt="";
-                $("#tagspan span").each(function(){
-                    span_txt += $(this).text();
-                })
                 var params = {
                     title: $("#title").val(),
-                    content: editor.txt.html(),
-                    tags: span_txt
+                    content: editor.txt.html()
                 };
-                // $.post(geteway + "/api/login", params, function (data) {
-                //     if (data.code == "1") {
-                //         window.location.href = data.msg;
-                //     } else {
-                //         $(".errinfo").html(data.msg);
-                //         $(".errinfo").css('display', 'inline-block');
-                //     }
-                // });
+                $.post(geteway + "/api/release", params, function (data) {
+                    if (data.code == "1") {
+                        // window.location.href = data.msg;
+                        layer.msg("发布成功");
+                    } else {
+                        layer.msg(data.msg);
+                    }
+                });
             }
         })
     }

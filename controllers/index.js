@@ -126,12 +126,7 @@ module.exports = {
             title: '激活账号'
         });
     },
-    'GET /test': async (ctx, next) => {
-        ctx.render('test.html', {
-            title: '书戈'
-        });
-    },
-    'GET /up': async (ctx, next) => {
-        ctx.render('up.html');
+    'GET /layout': async (ctx, next) => {
+        ctx.render('layout.html')
     }
 };

@@ -1,0 +1,192 @@
+html {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #FFF;
+}
+
+body,
+blockquote,
+dd,
+dl,
+figure,
+form,
+p,
+pre,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	word-wrap: break-word;
+	color: #222831;
+}
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height:1.5
+}
+em,
+i {
+	font-style: normal
+}
+
+p {
+	color: #404b69;
+	font-size: 14px;
+}
+
+menu,
+ul,
+ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 0 !important;
+}
+
+
+body,
+input,
+button,
+select,
+optgroup,
+option,
+textarea,
+blockquote,
+dd,
+dl,
+figure,
+form,
+pre,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+iframe {
+	background-color: #FFFFFF;
+	vertical-align: middle;
+}
+
+a {
+	color: #222831;
+	text-decoration: none;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-ms-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+	cursor: pointer;
+}
+
+a:link,
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #f1404b;
+}
+
+img {
+	max-width: 100%;
+}
+
+a img {
+	border: 0 none;
+}
+
+fieldset {
+	margin: 0;
+	padding: 0;
+}
+
+button,
+input.ie6 {
+	overflow: visible;
+	padding: 0;
+	outline: none;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-ms-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+input,
+input:focus,
+input[type="text"],
+input[type="text"]:focus,
+select,
+textarea {
+	-webkit-appearance: none;
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+input[type=checkbox] {
+	-webkit-appearance: checkbox !important;
+}
+
+input[type=radio] {
+	-webkit-appearance: radio !important;
+}
+.ml-20{
+	margin-left: 20px;
+}
+.mt-20{
+	margin-top: 20px;
+}
+.mt-30{
+	margin-top: 50px;
+}
+.f-r{
+	float: right;
+}
+.f-l{
+	float: left;
+}
+
+/*字体*/

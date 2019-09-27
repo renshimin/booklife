@@ -101,6 +101,10 @@ var db = {
 db.User = db.sequelize.import('./models/User.js');
 db.User_Log = db.sequelize.import('./models/User_Log.js');
 db.Article = db.sequelize.import('./models/Article.js');
+
+// db.User.hasMany(db.Article,{foreignKey:'id',targetKey: 'user_id'});
+db.User.hasMany(db.Article);
+db.Article.belongsTo(db.User);
 module.exports = db;
 
 

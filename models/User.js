@@ -16,7 +16,8 @@ module.exports = function(sequelize,DataTypes){
         update_time: DataTypes.DATE
     },{
         timestamps: false,
-        freezeTableName: true
+        freezeTableName: true,
+        underscored: true
     });
 
     return User;

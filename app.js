@@ -30,4 +30,4 @@ app.use(rest.restify());
 // 处理url路由
 app.use(controller());
 
-app.listen(3001);
+app.listen(3000);

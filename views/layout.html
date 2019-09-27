@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>{{ title }}</title>
+
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="/static/css/layout.css" rel="stylesheet">
+    <link href="/static/css/models.css" rel="stylesheet">
+
+    <script src="/static/js/ie-emulation-modes-warning.js"></script>
+</head>
+
+<body>
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+                <div class="masthead clearfix">
+                    <div class="inner">
+                        <h3 class="masthead-brand">书戈</h3>
+                        <nav>
+                            <ul class="nav masthead-nav">
+                                {% if islogin %}
+                                <li class="active"><a href="#">首页</a></li>
+                                <li><a href="#">写作</a></li>
+                                <li><a href="#">账户设置</a></li>
+                                <li><a href="#">退出</a></li>
+                                {% else %}
+                                <li class="active"><a href="#">首页</a></li>
+                                <li><a href="#">登录</a></li>
+                                <li><a href="#">注册</a></li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                {% block main %} {% endblock %}
+                <div class="inner cover">
+                    <h1 class="cover-heading">书如人生</h1>
+                    <p class="lead" style="padding-top: 25px;">每个人的一生都是一本书，快来记录属于你的精彩瞬间吧</p>
+                    <p class="lead">
+                        <a href="#" class="btn btnv3 f-wm f-fs16">come on</a>
+                    </p>
+                </div>
+
+                <div class="mastfoot">
+                    <div class="inner">
+                        <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+
+</html>

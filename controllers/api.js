@@ -7,7 +7,8 @@ const qiniu = require('../qiniu');
 
 
 let User = db.User,
-    User_Log = db.User_Log;
+    User_Log = db.User_Log,
+    Article = db.Article;
 module.exports = {
     'GET /api/products': async (ctx, next) => {
         var id = 1;
@@ -298,5 +299,67 @@ module.exports = {
                     msg: err.message
                 });
             })
+    },
+    //发布文章
+    'POST /api/release': async (ctx, next) => {
+        var title = ctx.request.body.title,
+            content = ctx.request.body.content;
+        
+        return cache.get('user')
+            .then(function (result){
+                var user = JSON.parse(result);
+                if (user != null){
+                    // 保存文章
+                    var aritcle = {
+                        user_id: user.id,
+                        title: title,
+                        content: content,
+                        type_id: 0,
+                        is_release: 1,
+                        is_del: 0,
+                        read_num: 0,
+                        like_num: 0,
+                        comment_num: 0,
+                        add_time: Date.now()
+                    }
+                    return Article.create(aritcle)
+                        .then(function (result){
+                            ctx.rest({
+                                code: 1
+                            });
+                        }).catch(function (err) {
+                            ctx.rest({
+                                code: 0,
+                                msg: err.message
+                            });
+                        })
+                }
+            }).catch(function (err) {
+                ctx.rest({
+                    code: 0,
+                    msg: err.message
+                });
+            })
+    },
+    //获取文章列表
+    'GET /api/list': async (ctx, next) => {
+        return Article.findAll({
+            include:[{
+                model: User
+            }],where: {
+                is_release: 1,
+                is_del: 0
+            }
+        }).then(function (result){
+            ctx.rest({
+                code: 1,
+                articles: result
+            })
+        }).catch(function (err) {
+            ctx.rest({
+                code: 0,
+                msg: err.message
+            });
+        })
     }
 };

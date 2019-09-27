@@ -3,54 +3,56 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="书戈 写书 写作 文章">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="/static/css/global.css" />
-    <link rel="stylesheet" href="/static/css/model.css" />
-    <link rel="stylesheet" href="/static/lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/sg.css" />
     <script src="/static/js/jquery.min.js"></script>
     <script src="/static/js/jquery.validate.min.js"></script>
-    <script src="/static/js/validform.js"></script>
-    <script src="/static/lib/layui/lay/dest/layui.all.js"></script>
 </head>
 
 <body>
-    <div class="tab-bar">
-        <div class="f-pwc f-oh">
-            <a href="/">书戈</a>
-            <ul class="f-fr">
-                {% if islogin %}
-                <li>
-                    <a href="/home">首页</a>
-                </li>
-                <li>
-                    <a href="/write">写作</a>
-                </li>
-                <li>
-                    <a href="/edit">账户设置</a>
-                </li>
-                <li>
-                    <a id="logout">退出</a>
-                </li>
-                {% else %}
-                <li>
-                    <a href="/home">首页</a>
-                </li>
-                <li>
-                    <a href="/login">登录</a>
-                </li>
-                <li>
-                    <a href="/register">注册</a>
-                </li>
-                {% endif %}
-            </ul>
+    <header class="header-sd shadow-2x">
+        <div class="container">
+            <div class="co-m-w">
+                <div class="header">
+                    <div>
+                        <img src="/static/img/sg.png">
+                    </div>
+                    <div id="nav">
+                        <ul>
+                            <li><a>首页</a></li>
+                            <li><a>关于</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    {% block main %} {% endblock %}
-    <div class="footer">
-        <div class="f-pwc f-tac">
-            © 2017
+    </header>
+    <div class="container">
+        <div class="co-m-w">
+            <div class="middle">
+                <div class="content">
+                    <div class="flex-item">
+                        <div class="title">
+                            <a>断舍离</a>
+                        </div>
+                        <div class="text-vl text-c mt-20">
+                            《断舍离》作者山下英子，日本人。讲的是对于收纳，整理空间和自我管理的书。突然第一反应觉得是因为日本“地小物薄”所以才要合理运用空间。以便对空间的利用率更大呢。呵呵。。其实不是。。。。
+                            《断舍离》三字总结，斩“断”物欲，“舍”弃废物，脱“离”执念。更多的教人如
+                        </div>
+                        <div class="text-dt text-c mt-20">
+                            2019-09-25
+                        </div>
+                    </div>
+                    <div id="bgimg" class="flex-item ml-20">
+                        <a style="background-image: url('http://127.0.0.1:3000/static/img/head.png');"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+            </div>
         </div>
     </div>
 </body>
