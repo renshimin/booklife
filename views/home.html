@@ -24,5 +24,9 @@
 </div>
 <script>
     $("ul li").eq(0).addClass("active");
+
+    $.get('/api/list', function (data) {
+            console.log(data);
+        })
 </script>
 {% endblock %}
